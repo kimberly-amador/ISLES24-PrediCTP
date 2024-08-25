@@ -7,7 +7,7 @@
   
 </div>
 
-TensorFlow implementation of our method for ISLES 2024: "Spatio-Temporal Deep Learning for Final Infarct Prediction using Acute Stroke CT Perfusion Data."
+TensorFlow implementation of our method for the ISLES 2024 Challenge: "Spatio-Temporal Deep Learning for Final Infarct Prediction using Acute Stroke CT Perfusion Data."
 
 ## Abstract
 Accurate prediction of the tissue outcome is crucial for guiding treatment decisions in acute ischemic stroke (AIS). Spatio-temporal (4D) Computed Tomography Perfusion (CTP) provides detailed insights into cerebral blood flow dynamics, which are essential for predicting final infarct regions. However, its high-dimensional and noisy nature presents challenges for direct prediction. In this study, we evaluate a deep learning model that fully leverages 4D CTP data for predicting tissue outcomes. The model integrates a shared-weight convolutional neural network (CNN) encoder, a Transformer encoder, and a CNN decoder to capture both spatial and temporal dependencies within the data. We evaluated this approach on a multicenter dataset of 143 patients from the ISLES 2024 challenge. The results reveal a Dice score of 0.17, an absolute volume difference of 18 ml, a lesion count difference of 29, and a lesion-wise F1-Score of 0.05, underscoring both the potential and challenges of directly utilizing 4D CTP data for final infarct prediction.
