@@ -64,7 +64,7 @@ partition = {
 #### Train Model
 
 1. Modify the model configuration. The default configuration parameters are in `./model/config.py`.
-2. Run `python main_unimodal.py` to train the model.
+2. Run `python ./model/main_unimodal.py` to train the model.
 
 ## Acknowledgement
 Part of the code is adapted from open-source codebase:
