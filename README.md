@@ -37,34 +37,17 @@ $ pip install -r requirements.txt
 ```
 
 #### Data Preparation
-1. Preprocess the data. The default model takes images of size 416 x 416.
-2. Save the preprocessed images and their corresponding labels as numpy arrays into a single file in 'patientID_preprocessed.npz' format. 
-3. Create a patient dictionary. This should be a pickle file containing a dict as follows, where s is the slice number:
+1. Download the ISLES24 dataset from [the official challenge page](https://isles-24.grand-challenge.org/dataset/) on the Grand Challenge website.
+2. Preprocess the dataset using [the included preprocessing script](python/data_processing/preproc.py).
 
-```python
-partition = {
-    'train': {
-        's_patientID',
-        's_patientID',
-        ...
-    },
-    'val': {
-        's_patientID',
-        's_patientID',
-        ...
-    }
-    'test': {
-        's_patientID',
-        's_patientID',
-        ...
-    }
-}
-```
-
-#### Train Model
+#### Model Training
 
 1. Modify the model configuration. The default configuration parameters are in `./model/config.py`.
 2. Run `python ./model/main_unimodal.py` to train the model.
+
+#### Inference and Evaluation
+1. Convert the model output back to images using [the included postprocessing script](python/data_processing/postproc.py).
+2. Visualize the images using your favorite image viewer, or calculate the metrics used in the ISLES24 challenge using [the included evaluation script](python/evaluation/evaluate_challenge_metrics.py).
 
 ## License
 
@@ -74,3 +57,4 @@ This repository is released under the Apache 2.0 license as found in the [LICENS
 Part of the code is adapted from open-source codebase:
 * Transformer: https://github.com/keras-team/keras-io/blob/master/examples/vision/video_transformers.py
 * Dice Loss: https://github.com/voxelmorph/voxelmorph/blob/legacy/ext/neuron/neuron/metrics.py
+* Evaluation Metrics: https://github.com/ezequieldlrosa/isles24/tree/main
